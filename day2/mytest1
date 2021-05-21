@@ -1,0 +1,4 @@
+echo "needs a life"
+
+touch new-file
+echo [1-9] >> new-file 
