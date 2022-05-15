@@ -5,7 +5,7 @@ agent any
 stages {
 	stage('SCM') {
 		when {
-			branch 'main'
+			branch 'master'
 		}
 		steps  {
 			echo "git pull my code for java app"
