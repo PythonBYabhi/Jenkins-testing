@@ -5,7 +5,7 @@ agent any
 stages {
 	stage('SCM') {
 		when {
-			branch 'master'
+			branch 'main'
 		}
 		steps {
 			checkout([
