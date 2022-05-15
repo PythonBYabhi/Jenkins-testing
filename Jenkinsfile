@@ -33,7 +33,7 @@ stages {
 	stage('Build') {
 		when {
         expression {
-            return env.BRANCH_NAME = 'main';
+            return env.GIT_BRANCH = 'main';
         }
     }
 		steps { 
