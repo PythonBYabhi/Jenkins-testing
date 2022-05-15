@@ -7,7 +7,8 @@ stages {
 		when {
 			branch 'master'
 		}
-		checkout([
+		steps {
+			checkout([
 				$class: 'GitSCM', 
 				branches: [[
 					name: '*/main'
@@ -18,6 +19,7 @@ stages {
 				]]
 	        	]
 		)
+		}
 		// steps  {
 		// 	echo "git pull my code for java app"
 		// }
