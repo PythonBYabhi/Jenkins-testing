@@ -1,7 +1,5 @@
 pipeline {
 agent any
-
-
 parameters {
 	string(
 		defaultValue: 'main', 
@@ -33,6 +31,11 @@ stages {
 	}
 
 	stage('Build') {
+		when {
+        expression {
+            return env.BRANCH_NAME = 'main';
+        }
+    }
 		steps { 
 			sh 'echo "hello from build"'
 		}
