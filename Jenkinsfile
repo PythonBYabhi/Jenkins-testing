@@ -4,7 +4,7 @@ agent any
 
 parameters {
 	string(
-		defaultValue: 'master', 
+		defaultValue: 'main', 
 		name: 'branch_name', 
 		trim: true
 	)
