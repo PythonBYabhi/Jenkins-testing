@@ -9,6 +9,18 @@ stages {
 		}
 		steps  {
 			echo "git pull my code for java app"
+			checkout([
+				$class: 'GitSCM', 
+				branches: [[
+					name: '*/main'
+				]], 
+				extensions: [], 
+				userRemoteConfigs: [[
+					url: 'https://github.com/abhi-dev91/Jenkins-testing.git'
+				]]
+	        	]
+		)
+			
 			
 		}
 	}
