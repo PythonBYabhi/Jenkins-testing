@@ -1,11 +1,18 @@
 pipeline {
-
 agent any
 
+
+parameters {
+	string(
+		defaultValue: 'master', 
+		name: 'branch_name', 
+		trim: true
+	)
+}
 stages {
 	stage('SCM') {
 		when {
-			branch 'main'
+			branch '${branch_name}'
 		}
 		steps {
 			checkout([
