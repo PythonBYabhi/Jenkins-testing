@@ -5,11 +5,9 @@ agent any
 stages {
 	stage('SCM') {
 		when {
-			branch  'main'
+			branch 'master'
 		}
-		steps  {
-			echo "git pull my code for java app"
-			checkout([
+		checkout([
 				$class: 'GitSCM', 
 				branches: [[
 					name: '*/main'
@@ -20,26 +18,26 @@ stages {
 				]]
 	        	]
 		)
-			
-			
-		}
+		// steps  {
+		// 	echo "git pull my code for java app"
+		// }
 	}
 
 	stage('Build') {
 		steps { 
-			echo "hello from build"
+			sh 'echo "hello from build"'
 		}
 	}	
 
 	stage('Deploy') {
 		steps {
-			echo 'java -jar target/*.jar'
+			sh 'echo "java -jar target/*.jar"'
 		}
 	}
 
 	stage('Deploy to Prod') {
 		steps {
-			echo "my final webapp to prod"
+			sh 'echo "my final webapp to prod"'
 		}
 	}
 
