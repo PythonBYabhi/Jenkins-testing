@@ -10,7 +10,7 @@ parameters {
 stages {
 	stage('SCM') {
 		when {
-			branch '${branch_name}'
+			branch 'main'
 		}
 		steps {
 			checkout([
