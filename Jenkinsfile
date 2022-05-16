@@ -13,17 +13,7 @@ stages {
 			branch 'main'
 		}
 		steps {
-			checkout([
-				$class: 'GitSCM', 
-				branches: [[
-					name: '*/main'
-				]], 
-				extensions: [], 
-				userRemoteConfigs: [[
-					url: 'https://github.com/abhi-dev91/Jenkins-testing.git'
-				]]
-	        	]
-		)
+			echo "hello from SCM"
 		}
 		// steps  {
 		// 	echo "git pull my code for java app"
@@ -32,9 +22,7 @@ stages {
 
 	stage('Build') {
 		when {
-        expression {
-            return env.GIT_BRANCH = 'main';
-        }
+			branch 'main'
     }
 		steps { 
 			sh 'echo "hello from build"'
